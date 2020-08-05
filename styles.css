@@ -1,0 +1,135 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: perpetua;
+    font-weight: 700;
+}
+
+.cheader {
+    padding: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightyellow;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    text-align: center;
+    border-bottom: 2px solid blue;
+}
+
+body {
+    background: linear-gradient(to right, hsl(335, 57%, 49%), hsl(249, 85%, 34%)); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clockbox {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    border: 2px solid #000;
+    position: relative;
+}
+
+.clockbox .number {
+
+    /*Focusing here*/
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* background-color: rgb(246, 250, 251); */
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    /* opacity: 10%; */ 
+}
+
+.clockbox .number1 {
+    --rotation: 30deg;
+}
+
+.clockbox .number2 {
+    --rotation: 60deg;
+}
+
+.clockbox .number3 {
+    --rotation: 90deg;
+}
+
+.clockbox .number4 {
+    --rotation: 120deg;
+}
+
+.clockbox .number5 {
+    --rotation: 150deg;    
+}
+
+.clockbox .number6 {
+    --rotation: 180deg;
+}
+
+.clockbox .number7 {
+    --rotation: 210deg;
+}
+
+.clockbox .number8 {
+    --rotation: 240deg;
+}
+
+.clockbox .number9 {
+    --rotation: 270deg;
+}
+
+.clockbox .number10 {
+    --rotation: 300deg;
+}
+
+.clockbox .number11 {
+    --rotation: 330deg;
+}
+
+.clockbox .clockhand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clockbox::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(75, 6, 102);
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clockbox .clockhand.second {
+    width: 4.5px;
+    height: 45%;
+    background-color: rgb(255, 0, 85);
+}
+
+.clockbox .clockhand.minute {
+    width: 8px;
+    height: 40%;
+    background-color: rgb(1, 41, 51);
+}
+
+.clockbox .clockhand.hour {
+    width: 11px;
+    height: 35%;
+    background-color: rgb(1, 41, 51);
+}
